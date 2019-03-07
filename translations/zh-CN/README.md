@@ -269,7 +269,7 @@ $ regex "red" '^(#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3}))$'
 # no output (invalid)
 ```
 
-**Example Usage in script:**
+**脚本中的示例用法：**
 
 ```shell
 is_hex_color() {

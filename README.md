@@ -33,7 +33,7 @@ See something incorrectly described, buggy or outright wrong? Open an issue or s
 
 # Translations
 
-Currently, there are these translations of **bash-handbook**:
+Currently, there are these translations of **pure-bash-bible**:
 
 - [简体中文 (中国)](/translations/zh-CN/README.md)
 
