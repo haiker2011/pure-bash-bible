@@ -31,21 +31,15 @@ See something incorrectly described, buggy or outright wrong? Open an issue or s
 
 <br>
 
-# Translations
-
-Currently, there are these translations of **bash-handbook**:
-
-- [简体中文 (中国)](/translations/zh-CN/README.md)
-
-# Table of Contents
+# 目录
 
 <!-- vim-markdown-toc GFM -->
 
-* [FOREWORD](#foreword)
-* [STRINGS](#strings)
-    * [Trim leading and trailing white-space from string](#trim-leading-and-trailing-white-space-from-string)
-    * [Trim all white-space from string and truncate spaces](#trim-all-white-space-from-string-and-truncate-spaces)
-    * [Use regex on a string](#use-regex-on-a-string)
+* [前言](#前言)
+* [字符串](#字符串)
+    * [字符串去掉前导空格和尾随空格](#字符串去掉前导空格和尾随空格)
+    * [去掉字符串所有空格和截断空格](#去掉字符串所有空格和截断空格)
+    * [对字符串使用正则表达式](#对字符串使用正则表达式)
     * [Split a string on a delimiter](#split-a-string-on-a-delimiter)
     * [Change a string to lowercase](#change-a-string-to-lowercase)
     * [Change a string to uppercase](#change-a-string-to-uppercase)
@@ -170,26 +164,24 @@ Currently, there are these translations of **bash-handbook**:
 <br>
 
 <!-- CHAPTER START -->
-# FOREWORD
+# 前言
 
-A collection of pure `bash` alternatives to external processes and programs. The `bash` scripting language is more powerful than people realise and most tasks can be accomplished without depending on external programs.
+纯 `bash` 替代外部进程和程序的集合。`bash` 脚本语言比人们意识到的更强大，而且大多数任务都可以在不依赖外部程序的情况下完成。
 
-Calling an external process in `bash` is expensive and excessive use will cause a noticeable slowdown. Scripts and programs written using built-in methods (*where applicable*) will be faster, require fewer dependencies and afford a better understanding of the language itself.
+在 `bash` 中调用一个外部进程是昂贵的，过度使用会导致明显的速度减慢。使用内置方法（*如果适用*）编写的脚本和程序将更快，需要的依赖性更少，并且能够更好地理解语言本身。
 
-The contents of this book provide a reference for solving problems encountered when writing programs and scripts in `bash`. Examples are in function formats showcasing how to incorporate these solutions into code.
+本书的内容为解决在 `bash` 中编写程序和脚本时遇到的问题提供了参考。示例以函数格式显示如何将这些解决方案合并到代码中。
 
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# STRINGS
+# 字符串
 
-## Trim leading and trailing white-space from string
+## 字符串去掉前导空格和尾随空格
 
-This is an alternative to `sed`, `awk`, `perl` and other tools. The
-function below works by finding all leading and trailing white-space and
-removing it from the start and end of the string. The `:` built-in is used in place of a temporary variable.
+这是 `sed`、`awk`、`perl` 和其他工具的替代方案。下面的函数通过查找所有前导空格和尾随空格以及从字符串的开始和结束处删除它。使用 `:` 内置变量代替临时变量。
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 trim_string() {
@@ -200,7 +192,7 @@ trim_string() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ trim_string "    Hello,  World    "
@@ -212,13 +204,15 @@ John Black
 ```
 
 
-## Trim all white-space from string and truncate spaces
+## 去掉字符串所有空格和截断空格
 
 This is an alternative to `sed`, `awk`, `perl` and other tools. The
 function below works by abusing word splitting to create a new string
 without leading/trailing white-space and with truncated spaces.
 
-**Example Function:**
+这是 `sed`、`awk`、`perl` 和其他工具的替代方案。下面的函数通过滥用单词分隔符来创建新字符串没有前导/尾随空格和截断空格。
+
+**示例函数：**
 
 ```sh
 # shellcheck disable=SC2086,SC2048
@@ -231,7 +225,7 @@ trim_all() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ trim_all "    Hello,    World    "
@@ -242,19 +236,15 @@ $ trim_all "$name"
 John Black is my name.
 ```
 
-## Use regex on a string
+## 对字符串使用正则表达式
 
-The result of `bash`'s regex matching can be used to replace `sed` for a
-large number of use-cases.
+`bash` 的正则表达式匹配结果可用于替换 `sed` 大部分的使用场景。
 
-**CAVEAT**: This is one of the few platform dependent `bash` features.
-`bash` will use whatever regex engine is installed on the user's system.
-Stick to POSIX regex features if aiming for compatibility.
+**警告**：这是少数几个依赖于平台的 `bash` 功能之一。`bash` 将使用用户系统上安装的任何正则表达式引擎。如果目标是兼容性，请坚持使用 POSIX 正则表达式功能。
 
-**CAVEAT**: This example only prints the first matching group. When using
-multiple capture groups some modification is needed.
+**警告**：此示例仅打印第一个匹配组。当使用多个捕获组时需要进行一些修改。
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 regex() {
@@ -263,7 +253,7 @@ regex() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ # Trim leading white-space.
