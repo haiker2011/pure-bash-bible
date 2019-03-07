@@ -40,19 +40,19 @@ See something incorrectly described, buggy or outright wrong? Open an issue or s
     * [字符串去掉前导空格和尾随空格](#字符串去掉前导空格和尾随空格)
     * [去掉字符串所有空格和截断空格](#去掉字符串所有空格和截断空格)
     * [对字符串使用正则表达式](#对字符串使用正则表达式)
-    * [Split a string on a delimiter](#split-a-string-on-a-delimiter)
-    * [Change a string to lowercase](#change-a-string-to-lowercase)
-    * [Change a string to uppercase](#change-a-string-to-uppercase)
-    * [Trim quotes from a string](#trim-quotes-from-a-string)
-    * [Strip all instances of pattern from string](#strip-all-instances-of-pattern-from-string)
-    * [Strip first occurrence of pattern from string](#strip-first-occurrence-of-pattern-from-string)
-    * [Strip pattern from start of string](#strip-pattern-from-start-of-string)
-    * [Strip pattern from end of string](#strip-pattern-from-end-of-string)
-    * [Percent-encode a string](#percent-encode-a-string)
-    * [Decode a percent-encoded string](#decode-a-percent-encoded-string)
-    * [Check if string contains a sub-string](#check-if-string-contains-a-sub-string)
-    * [Check if string starts with sub-string](#check-if-string-starts-with-sub-string)
-    * [Check if string ends with sub-string](#check-if-string-ends-with-sub-string)
+    * [在分隔符上拆分字符串](#在分隔符上拆分字符串)
+    * [将字符串改为小写](#将字符串改为小写)
+    * [将字符串改为大写](#将字符串改为大写)
+    * [去掉字符串中引号](#去掉字符串中引号)
+    * [从字符串中去掉匹配模式的所有实例](#从字符串中去掉匹配模式的所有实例)
+    * [从字符串中去掉第一个匹配的模式](#从字符串中去掉第一个匹配的模式)
+    * [从字符串开始去掉匹配模式](#从字符串开始去掉匹配模式)
+    * [从字符串结尾去掉匹配模式](#从字符串结尾去掉匹配模式)
+    * [字符串中“/”编码](#字符串中“/”编码)
+    * [字符串中“/”解码](#字符串中“/”解码)
+    * [检查字符串是否包含某个子串](#检查字符串是否包含某个子串)
+    * [检查字符串是否以某子串开始](#检查字符串是否以某子串开始)
+    * [检查字符串是否以某子串结束](#检查字符串是否以某子串结束)
 * [ARRAYS](#arrays)
     * [Reverse an array](#reverse-an-array)
     * [Remove duplicate array elements](#remove-duplicate-array-elements)
@@ -288,11 +288,13 @@ is_hex_color "$color" || color="#FFFFFF"
 ```
 
 
-## Split a string on a delimiter
+## 在分隔符上拆分字符串
 
 This is an alternative to `cut`, `awk` and other tools.
 
-**Example Function:**
+这是 `cut`、`awk` 和其他工具的替代方案。
+
+**示例函数：**
 
 ```sh
 split() {
@@ -302,7 +304,7 @@ split() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ split "apples,oranges,pears,grapes" ","
@@ -328,11 +330,11 @@ is
 john
 ```
 
-## Change a string to lowercase
+## 将字符串改为小写
 
-**CAVEAT:** Requires `bash` 4+
+**警告：** 需要 `bash` 4+
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 lower() {
@@ -341,7 +343,7 @@ lower() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ lower "HELLO"
@@ -354,11 +356,11 @@ $ lower "hello"
 hello
 ```
 
-## Change a string to uppercase
+## 将字符串改为大写
 
-**CAVEAT:** Requires `bash` 4+
+**CAVEAT:** 需要 `bash` 4+
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 upper() {
@@ -367,7 +369,7 @@ upper() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ upper "hello"
@@ -380,9 +382,9 @@ $ upper "HELLO"
 HELLO
 ```
 
-## Trim quotes from a string
+## 去掉字符串中引号
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 trim_quotes() {
@@ -392,7 +394,7 @@ trim_quotes() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ var="'Hello', \"World\""
@@ -400,9 +402,9 @@ $ trim_quotes "$var"
 Hello, World
 ```
 
-## Strip all instances of pattern from string
+## 从字符串中去掉匹配模式的所有实例
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 strip_all() {
@@ -411,7 +413,7 @@ strip_all() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ strip_all "The Quick Brown Fox" "[aeiou]"
@@ -424,9 +426,9 @@ $ strip_all "The Quick Brown Fox" "Quick "
 The Brown Fox
 ```
 
-## Strip first occurrence of pattern from string
+## 从字符串中去掉第一个匹配的模式
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 strip() {
@@ -435,7 +437,7 @@ strip() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ strip "The Quick Brown Fox" "[aeiou]"
@@ -445,9 +447,9 @@ $ strip "The Quick Brown Fox" "[[:space:]]"
 TheQuick Brown Fox
 ```
 
-## Strip pattern from start of string
+## 从字符串开始去掉匹配模式
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 lstrip() {
@@ -456,16 +458,16 @@ lstrip() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ lstrip "The Quick Brown Fox" "The "
 Quick Brown Fox
 ```
 
-## Strip pattern from end of string
+## 从字符串结尾去掉匹配模式
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 rstrip() {
@@ -474,16 +476,16 @@ rstrip() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ rstrip "The Quick Brown Fox" " Fox"
 The Quick Brown
 ```
 
-## Percent-encode a string
+## 字符串中“/”编码
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 urlencode() {
@@ -505,16 +507,16 @@ urlencode() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ urlencode "https://github.com/dylanaraps/pure-bash-bible"
 https%3A%2F%2Fgithub.com%2Fdylanaraps%2Fpure-bash-bible
 ```
 
-## Decode a percent-encoded string
+## 字符串中“/”解码
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 urldecode() {
@@ -524,16 +526,16 @@ urldecode() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ urldecode "https%3A%2F%2Fgithub.com%2Fdylanaraps%2Fpure-bash-bible"
 https://github.com/dylanaraps/pure-bash-bible
 ```
 
-## Check if string contains a sub-string
+## 检查字符串是否包含某个子串
 
-**Using a test:**
+**使用 test：**
 
 ```shell
 if [[ $var == *sub_string* ]]; then
@@ -551,7 +553,7 @@ if [[ ${arr[*]} == *sub_string* ]]; then
 fi
 ```
 
-**Using a case statement:**
+**使用 case 声明：**
 
 ```shell
 case "$var" in
@@ -569,7 +571,7 @@ case "$var" in
 esac
 ```
 
-## Check if string starts with sub-string
+## 检查字符串是否以某子串开始
 
 ```shell
 if [[ $var == sub_string* ]]; then
@@ -582,7 +584,7 @@ if [[ $var != sub_string* ]]; then
 fi
 ```
 
-## Check if string ends with sub-string
+## 检查字符串是否以某子串结束
 
 ```shell
 if [[ $var == *sub_string ]]; then
