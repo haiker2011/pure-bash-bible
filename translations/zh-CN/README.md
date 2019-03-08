@@ -53,12 +53,12 @@ See something incorrectly described, buggy or outright wrong? Open an issue or s
     * [检查字符串是否包含某个子串](#检查字符串是否包含某个子串)
     * [检查字符串是否以某子串开始](#检查字符串是否以某子串开始)
     * [检查字符串是否以某子串结束](#检查字符串是否以某子串结束)
-* [ARRAYS](#arrays)
-    * [Reverse an array](#reverse-an-array)
-    * [Remove duplicate array elements](#remove-duplicate-array-elements)
-    * [Random array element](#random-array-element)
-    * [Cycle through an array](#cycle-through-an-array)
-    * [Toggle between two values](#toggle-between-two-values)
+* [数组](#数组)
+    * [反转数组](#反转数组)
+    * [去除数组中重复元素](#去除数组中重复元素)
+    * [随机输出数组中的一个元素](#随机输出数组中的一个元素)
+    * [循环数组](#循环数组)
+    * [在两个值之间切换](#在两个值之间切换)
 * [LOOPS](#loops)
     * [Loop over a range of numbers](#loop-over-a-range-of-numbers)
     * [Loop over a variable range of numbers](#loop-over-a-variable-range-of-numbers)
@@ -600,14 +600,13 @@ fi
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# ARRAYS
+# 数组
 
-## Reverse an array
+## 反转数组
 
-Enabling `extdebug` allows access to the `BASH_ARGV` array which stores
-the current function’s arguments in reverse.
+启用 `extdebug` 允许访问存储的 `BASH_ARGV` 数组反转当前函数的参数。
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 reverse_array() {
@@ -618,7 +617,7 @@ reverse_array() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ reverse_array 1 2 3 4 5
@@ -635,15 +634,13 @@ blue
 red
 ```
 
-## Remove duplicate array elements
+## 去除数组中重复元素
 
-Create a temporary associative array. When setting associative array
-values and a duplicate assignment occurs, bash overwrites the key. This
-allows us to effectively remove array duplicates.
+创建一个临时的相关数组。设置的相关数组的值和赋值的值重复时，bash 会覆盖值。这样可以有效地删除数组中的重复项。
 
-**CAVEAT:** Requires `bash` 4+
+**警告：** 需要 `bash` 4+
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 remove_array_dups() {
@@ -658,7 +655,7 @@ remove_array_dups() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ remove_array_dups 1 1 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5 5
@@ -675,9 +672,9 @@ green
 blue
 ```
 
-## Random array element
+## 随机输出数组中的一个元素
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 random_array_element() {
@@ -687,7 +684,7 @@ random_array_element() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ array=(red green blue yellow brown)
@@ -699,11 +696,13 @@ $ random_array_element 1 2 3 4 5 6 7
 3
 ```
 
-## Cycle through an array
+## 循环数组
 
 Each time the `printf` is called, the next array element is printed. When
 the print hits the last array element it starts from the first element
 again.
+
+每次调用 `printf` 时，都会打印下一个数组元素。当 print 命中数组的最后一个元素后，它从第一个元素开始再打印以此。
 
 ```sh
 arr=(a b c d)
@@ -715,9 +714,9 @@ cycle() {
 ```
 
 
-## Toggle between two values
+## 在两个值之间切换
 
-This works the same as above, this is just a different use case.
+这个和上面一个工作原理相同，只是不同的使用场景。
 
 ```sh
 arr=(true false)
@@ -2081,11 +2080,11 @@ bkr ./some_script.sh # some_script.sh is now running in the background
 
 <!-- CHAPTER END -->
 
-# AFTERWORD
+# 后记
 
-Thanks for reading! If this bible helped you in any way and you'd like to give back, consider donating. Donations give me the time to make this the best resource possible. Can't donate? That's OK, star the repo and share it with your friends!
+谢谢你的阅读！如果这本圣经在任何方面帮助了你，你想回报，考虑捐赠。捐款使我有更多的时间来使这项目变得更好。不能捐献？没关系，给本项目来个 star 和你的朋友分享我们的项目吧！
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V7QNJNKS3WYVS"><img src="https://img.shields.io/badge/donate-paypal-yellow.svg"></a> <a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/donate-patreon-yellow.svg"> </a><a href="https://liberapay.com/2211/"><img src="https://img.shields.io/badge/donate-liberapay-yellow.svg"></a>
 
 
-Rock on. 🤘
+嗨起来吧！ 🤘
