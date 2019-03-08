@@ -17,15 +17,15 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 <img src="https://s3.amazonaws.com/titlepages.leanpub.com/bash/hero" width="40%" align="right">
 </a>
 
-The goal of this book is to document commonly-known and lesser-known methods of doing various tasks using only built-in `bash` features. Using the snippets from this bible can help remove unneeded dependencies from scripts and in most cases make them faster. I came across these tips and discovered a few while developing [neofetch](https://github.com/dylanaraps/neofetch), [pxltrm](https://github.com/dylanaraps/pxltrm) and other smaller projects.
+这本书的目的是记录常用和不太常用的方法，只使用内置的 `bash` 特性来完成各种任务。使用 bible 中的片段有助于从脚本中删除不必要的依赖项，在大多数情况下，使y用它们性能更好。我在开发 [NeoFetch](https://github.com/dylanaraps/neoFetch) ，[pxltrm](https://github.com/dylanaraps/pxltrm) 和其他小的项目时发现了这些技巧。
 
-The snippets below are linted using `shellcheck` and tests have been written where applicable. Want to contribute? Read the [CONTRIBUTING.md](https://github.com/dylanaraps/pure-bash-bible/blob/master/CONTRIBUTING.md). It outlines how the unit tests work and what is required when adding snippets to the bible.
+下面的代码片段是使用 `shellcheck` 进行代码检查，并在适用的情况下编写了测试。想贡献您的一份力量？ 阅读[CONTRIBUTING.md](https://github.com/dylanaraps/pure-bash-bible/blob/master/CONTRIBUTING.md)。它概述了单元测试是如何工作的，以及向 bible 中添加代码片段时需要什么。
 
-See something incorrectly described, buggy or outright wrong? Open an issue or send a pull request. If the bible is missing something, open an issue and a solution will be found.
+发现不正确的描述、bug 或者错误？新建一个 issue 或者向我们发 PR。如果发现 bible 缺少了一些东西，可以新建一个 issue，你应该会得到答复。
 
 <br>
-<p align="center"><b>This book is also available to purchase on leanpub. https://leanpub.com/bash</b></p>
-<p align="center"><b>Or you can buy me a coffee.</b>
+<p align="center"><b>这本书可以在 leanpub 上进行购买。 https://leanpub.com/bash</b></p>
+<p align="center"><b>或者你也可以打赏作者。</b>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V7QNJNKS3WYVS"><img src="https://img.shields.io/badge/don-paypal-yellow.svg"></a> <a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/don-patreon-yellow.svg"> </a><a href="https://liberapay.com/2211/"><img src="https://img.shields.io/badge/don-liberapay-yellow.svg"></a>
 </p>
 
@@ -65,7 +65,7 @@ See something incorrectly described, buggy or outright wrong? Open an issue or s
     * [循环遍历数组](#循环遍历数组)
     * [通过索引循环遍历数组内容](#通过索引循环遍历数组内容)
     * [循环遍历文件内容](#循环遍历文件内容)
-    * [循环遍历文件和目录](#循环遍历文件和目录)
+    * [循环遍历文件和目录](#循环遍历文件和)
 * [FILE HANDLING](#file-handling)
     * [Read a file to a string](#read-a-file-to-a-string)
     * [Read a file to an array (*by line*)](#read-a-file-to-an-array-by-line)
