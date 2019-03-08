@@ -59,13 +59,13 @@ See something incorrectly described, buggy or outright wrong? Open an issue or s
     * [随机输出数组中的一个元素](#随机输出数组中的一个元素)
     * [循环数组](#循环数组)
     * [在两个值之间切换](#在两个值之间切换)
-* [LOOPS](#loops)
-    * [Loop over a range of numbers](#loop-over-a-range-of-numbers)
-    * [Loop over a variable range of numbers](#loop-over-a-variable-range-of-numbers)
-    * [Loop over an array](#loop-over-an-array)
-    * [Loop over an array with an index](#loop-over-an-array-with-an-index)
-    * [Loop over the contents of a file](#loop-over-the-contents-of-a-file)
-    * [Loop over files and directories](#loop-over-files-and-directories)
+* [循环](#循环)
+    * [循环遍历一系列数字](#循环遍历一系列数字)
+    * [循环遍历一个从0到变量的数字](#循环遍历一个从0到变量的数字)
+    * [循环遍历数组](#循环遍历数组)
+    * [通过索引循环遍历数组内容](#通过索引循环遍历数组内容)
+    * [循环遍历文件内容](#循环遍历文件内容)
+    * [循环遍历文件和目录](#循环遍历文件和目录)
 * [FILE HANDLING](#file-handling)
     * [Read a file to a string](#read-a-file-to-a-string)
     * [Read a file to an array (*by line*)](#read-a-file-to-an-array-by-line)
@@ -730,11 +730,11 @@ cycle() {
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# LOOPS
+# 循环
 
-## Loop over a range of numbers
+## 循环遍历一系列数字
 
-Alternative to `seq`.
+替换 `seq`.
 
 ```shell
 # Loop from 0-100 (no variable support).
@@ -743,9 +743,9 @@ for i in {0..100}; do
 done
 ```
 
-## Loop over a variable range of numbers
+## 循环遍历一个从0到变量的数字
 
-Alternative to `seq`.
+替换 `seq`.
 
 ```shell
 # Loop from 0-VAR.
@@ -755,7 +755,7 @@ for ((i=0;i<=VAR;i++)); do
 done
 ```
 
-## Loop over an array
+## 循环遍历数组
 
 ```shell
 arr=(apples oranges tomatoes)
@@ -766,7 +766,7 @@ for element in "${arr[@]}"; do
 done
 ```
 
-## Loop over an array with an index
+## 通过索引循环遍历数组内容
 
 ```shell
 arr=(apples oranges tomatoes)
@@ -782,7 +782,7 @@ for ((i=0;i<${#arr[@]};i++)); do
 done
 ```
 
-## Loop over the contents of a file
+## 循环遍历文件内容
 
 ```shell
 while read -r line; do
@@ -790,9 +790,9 @@ while read -r line; do
 done < "file"
 ```
 
-## Loop over files and directories
+## 循环遍历文件和目录
 
-Don’t use `ls`.
+不使用 `ls`.
 
 ```shell
 # Greedy example.
@@ -2082,7 +2082,7 @@ bkr ./some_script.sh # some_script.sh is now running in the background
 
 # 后记
 
-谢谢你的阅读！如果这本圣经在任何方面帮助了你，你想回报，考虑捐赠。捐款使我有更多的时间来使这项目变得更好。不能捐献？没关系，给本项目来个 star 和你的朋友分享我们的项目吧！
+谢谢你的阅读！如果这本圣经在任何方面帮助了你，你想回报，考虑捐赠。捐款使我有更多的时间来使这项目变得更好。不能捐献？没关系，给本项目来个 star 然后和你的朋友分享我们的项目吧！
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V7QNJNKS3WYVS"><img src="https://img.shields.io/badge/donate-paypal-yellow.svg"></a> <a href="https://www.patreon.com/dyla"><img src="https://img.shields.io/badge/donate-patreon-yellow.svg"> </a><a href="https://liberapay.com/2211/"><img src="https://img.shields.io/badge/donate-liberapay-yellow.svg"></a>
 
