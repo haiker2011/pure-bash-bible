@@ -65,16 +65,16 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     * [循环遍历数组](#循环遍历数组)
     * [通过索引循环遍历数组内容](#通过索引循环遍历数组内容)
     * [循环遍历文件内容](#循环遍历文件内容)
-    * [循环遍历文件和目录](#循环遍历文件和)
-* [FILE HANDLING](#file-handling)
-    * [Read a file to a string](#read-a-file-to-a-string)
-    * [Read a file to an array (*by line*)](#read-a-file-to-an-array-by-line)
-    * [Get the first N lines of a file](#get-the-first-n-lines-of-a-file)
-    * [Get the last N lines of a file](#get-the-last-n-lines-of-a-file)
-    * [Get the number of lines in a file](#get-the-number-of-lines-in-a-file)
-    * [Count files or directories in directory](#count-files-or-directories-in-directory)
-    * [Create an empty file](#create-an-empty-file)
-    * [Extract lines between two markers](#extract-lines-between-two-markers)
+    * [循环遍历文件和目录](#循环遍历文件和目录)
+* [文件处理](#文件处理)
+    * [文件读入到字符串](#文件读入到字符串)
+    * [文件读入到数组 (*按行*)](#文件读入到数组-(*按行*))
+    * [获取文件的前N行](#获取文件的前N行)
+    * [获取文件最后N行](#获取文件最后N行)
+    * [获取文件行数](#获取文件行数)
+    * [对目录中的文件或目录进行计数](#对目录中的文件或目录进行计数)
+    * [创建空文件](#创建空文件)
+    * [提取两个标记之间的行](#提取两个标记之间的行)
 * [FILE PATHS](#file-paths)
     * [Get the directory name of a file path](#get-the-directory-name-of-a-file-path)
     * [Get the base-name of a file path](#get-the-base-name-of-a-file-path)
@@ -826,21 +826,21 @@ shopt -u globstar
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# FILE HANDLING
+# 文件处理
 
-**CAVEAT:** `bash` does not handle binary data properly in versions `< 4.4`.
+**警告：** `bash` 在 `< 4.4` 版本中不能正确处理二进制数据。
 
-## Read a file to a string
+## 文件读入到字符串
 
-Alternative to the `cat` command.
+替代 `cat` 命令。
 
 ```shell
 file_data="$(<"file")"
 ```
 
-## Read a file to an array (*by line*)
+## 文件读入到数组 (*按行*)
 
-Alternative to the `cat` command.
+替代 `cat` 命令。
 
 ```shell
 # Bash <4
@@ -850,13 +850,13 @@ IFS=$'\n' read -d "" -ra file_data < "file"
 mapfile -t file_data < "file"
 ```
 
-## Get the first N lines of a file
+## 获取文件的前N行
 
-Alternative to the `head` command.
+替代 `head` 命令
 
 **CAVEAT:** Requires `bash` 4+
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 head() {
@@ -866,7 +866,7 @@ head() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ head 2 ~/.bashrc
@@ -877,13 +877,13 @@ $ head 1 ~/.bashrc
 # Prompt
 ```
 
-## Get the last N lines of a file
+## 获取文件最后N行
 
-Alternative to the `tail` command.
+替代 `tail` 命令。
 
-**CAVEAT:** Requires `bash` 4+
+**警告：** 需要 `bash` 4+
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 tail() {
@@ -893,7 +893,7 @@ tail() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ tail 2 ~/.bashrc
@@ -904,11 +904,11 @@ $ tail 1 ~/.bashrc
 # [[ -z "$TMUX"  ]] && exec tmux
 ```
 
-## Get the number of lines in a file
+## 获取文件行数
 
-Alternative to `wc -l`.
+替代 `wc -l`.
 
-**Example Function (bash 4):**
+**示例函数 (bash 4)：**
 
 ```sh
 lines() {
@@ -918,7 +918,7 @@ lines() {
 }
 ```
 
-**Example Function (bash 3):**
+**示例函数 (bash 3)：**
 
 This method uses less memory than the `mapfile` method and works in `bash` 3 but it is slower for bigger files.
 
@@ -933,7 +933,7 @@ lines_loop() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ lines ~/.bashrc
@@ -943,11 +943,11 @@ $ lines_loop ~/.bashrc
 48
 ```
 
-## Count files or directories in directory
+## 对目录中的文件或目录进行计数
 
-This works by passing the output of the glob to the function and then counting the number of arguments.
+它的工作原理是将glob的输出传递给函数，然后计算参数的数量。
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 count() {
@@ -957,7 +957,7 @@ count() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 # Count all files in dir.
@@ -973,9 +973,9 @@ $ count ~/Pictures/*.jpg
 64
 ```
 
-## Create an empty file
+## 创建空文件
 
-Alternative to `touch`.
+替代 `touch`.
 
 ```shell
 # Shortest.
@@ -987,9 +987,9 @@ echo -n >file
 printf '' >file
 ```
 
-## Extract lines between two markers
+## 提取两个标记之间的行
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 extract() {
@@ -1004,7 +1004,7 @@ extract() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 # Extract code blocks from MarkDown file.
