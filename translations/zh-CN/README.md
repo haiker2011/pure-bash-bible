@@ -157,7 +157,7 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     * [Bypass shell aliases](#bypass-shell-aliases)
     * [Bypass shell functions](#bypass-shell-functions)
     * [Run a command in the background](#run-a-command-in-the-background)
-* [AFTERWORD](#afterword)
+* [后记](#后记)
 
 <!-- vim-markdown-toc -->
 
