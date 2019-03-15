@@ -1015,13 +1015,13 @@ $ extract ~/projects/pure-bash/README.md '```sh' '```'
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# FILE PATHS
+# 文件路径
 
-## Get the directory name of a file path
+## 获取文件路径的目录名
 
-Alternative to the `dirname` command.
+替代 `dirname` 命令。
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 dirname() {
@@ -1030,7 +1030,7 @@ dirname() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ dirname ~/Pictures/Wallpapers/1.jpg
@@ -1040,11 +1040,11 @@ $ dirname ~/Pictures/Downloads/
 /home/black/Pictures/
 ```
 
-## Get the base-name of a file path
+## 获取文件路径的 base-name
 
-Alternative to the `basename` command.
+替代 `basename` 命令。
 
-**Example Function:**
+**示例函数：**
 
 ```sh
 basename() {
@@ -1054,7 +1054,7 @@ basename() {
 }
 ```
 
-**Example Usage:**
+**示例用法：**
 
 ```shell
 $ basename ~/Pictures/Wallpapers/1.jpg
