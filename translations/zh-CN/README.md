@@ -75,9 +75,9 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     * [对目录中的文件或目录进行计数](#对目录中的文件或目录进行计数)
     * [创建空文件](#创建空文件)
     * [提取两个标记之间的行](#提取两个标记之间的行)
-* [FILE PATHS](#file-paths)
-    * [Get the directory name of a file path](#get-the-directory-name-of-a-file-path)
-    * [Get the base-name of a file path](#get-the-base-name-of-a-file-path)
+* [文件路径](#文件路径)
+    * [获取文件路径的目录名](#获取文件路径的目录名)
+    * [获取文件路径的 base-name](#获取文件路径的base-name)
 * [VARIABLES](#variables)
     * [Assign and access a variable using a variable](#assign-and-access-a-variable-using-a-variable)
     * [Name a variable based on another variable](#name-a-variable-based-on-another-variable)
@@ -1040,7 +1040,7 @@ $ dirname ~/Pictures/Downloads/
 /home/black/Pictures/
 ```
 
-## 获取文件路径的 base-name
+## 获取文件路径的base-name
 
 替代 `basename` 命令。
 
