@@ -78,9 +78,9 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 * [文件路径](#文件路径)
     * [获取文件路径的目录名](#获取文件路径的目录名)
     * [获取文件路径的 base-name](#获取文件路径的base-name)
-* [VARIABLES](#variables)
-    * [Assign and access a variable using a variable](#assign-and-access-a-variable-using-a-variable)
-    * [Name a variable based on another variable](#name-a-variable-based-on-another-variable)
+* [变量](#变量)
+    * [使用一个变量声明和访问一个变量](#使用一个变量声明和访问一个变量)
+    * [基于另一个变量命名变量](#基于另一个变量命名变量)
 * [ESCAPE SEQUENCES](#escape-sequences)
     * [Text Colors](#text-colors)
     * [Text Attributes](#text-attributes)
@@ -1067,9 +1067,9 @@ Downloads
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# VARIABLES
+# 变量
 
-## Assign and access a variable using a variable
+## 使用一个变量声明和访问一个变量
 
 ```shell
 $ hello_world="value"
@@ -1083,7 +1083,7 @@ $ printf '%s\n' "${!ref}"
 value
 ```
 
-Alternatively, on `bash` 4.3+:
+替代 `bash` 4.3+:
 
 ```shell
 $ hello_world="value"
@@ -1096,7 +1096,7 @@ $ printf '%s\n' "$ref"
 value
 ```
 
-## Name a variable based on another variable
+## 基于另一个变量命名变量
 
 ```shell
 $ var="world"
