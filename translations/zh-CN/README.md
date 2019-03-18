@@ -86,13 +86,13 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     * [文本属性](#文本属性)
     * [游标移动](#游标移动)
     * [擦除文本](#擦除文本)
-* [PARAMETER EXPANSION](#parameter-expansion)
-    * [Indirection](#indirection)
-    * [Replacement](#replacement)
-    * [Length](#length)
-    * [Expansion](#expansion)
-    * [Case Modification](#case-modification)
-    * [Default Value](#default-value)
+* [参数展开](#参数展开)
+    * [间接展开](#间接展开)
+    * [替换](#替换)
+    * [长度](#长度)
+    * [展开](#展开)
+    * [大小写转换](#大小写转换)
+    * [默认值](#默认值)
 * [BRACE EXPANSION](#brace-expansion)
     * [Ranges](#ranges)
     * [String Lists](#string-lists)
@@ -1168,9 +1168,9 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# PARAMETER EXPANSION
+# 参数展开
 
-## Indirection
+## 间接展开
 
 | Parameter | What does it do? |
 | --------- | ---------------- |
@@ -1179,7 +1179,7 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 | `${!VAR@}` | Expand to `IFS` separated list of variable names starting with `VAR`. If double-quoted, each variable name expands to a separate word. |
 
 
-## Replacement
+## 替换
 
 | Parameter | What does it do? |
 | --------- | ---------------- |
@@ -1192,14 +1192,14 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 | `${VAR/PATTERN}` | Remove first match.
 | `${VAR//PATTERN}` | Remove all matches.
 
-## Length
+## 长度
 
 | Parameter | What does it do? |
 | --------- | ---------------- |
 | `${#VAR}` | Length of var in characters.
 | `${#ARR[@]}` | Length of array in elements.
 
-## Expansion
+## 展开
 
 | Parameter | What does it do? |
 | --------- | ---------------- |
@@ -1210,7 +1210,7 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 | `${VAR: -OFFSET}` | Get last `N` chars from variable.
 | `${VAR:OFFSET:-OFFSET}` | Cut first `N` chars and last `N` chars. | `bash 4.2+` |
 
-## Case Modification
+## 大小写转换
 
 | Parameter | What does it do? | CAVEAT |
 | --------- | ---------------- | ------ |
@@ -1220,7 +1220,7 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 | `${VAR,,}` | Lowercase all characters. | `bash 4+` |
 
 
-## Default Value
+## 默认值
 
 | Parameter | What does it do? |
 | --------- | ---------------- |
