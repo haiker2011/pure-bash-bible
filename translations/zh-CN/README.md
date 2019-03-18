@@ -101,12 +101,12 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     * [文件比较](#文件比较)
     * [变量条件](#变量条件)
     * [变量比较](#变量比较)
-* [ARITHMETIC OPERATORS](#arithmetic-operators)
-    * [Assignment](#assignment)
-    * [Arithmetic](#arithmetic)
-    * [Bitwise](#bitwise)
-    * [Logical](#logical)
-    * [Miscellaneous](#miscellaneous)
+* [算术运算符](#算术运算符)
+    * [赋值运算符](#赋值运算符)
+    * [算术运算符](#算术运算符)
+    * [按位运算](#按位运算)
+    * [逻辑运算](#逻辑运算)
+    * [其他](#其他)
 * [ARITHMETIC](#arithmetic-1)
     * [Simpler syntax to set variables](#simpler-syntax-to-set-variables)
     * [Ternary Tests](#ternary-tests)
@@ -1342,59 +1342,59 @@ rm -rf ~/Downloads/{Movies,Music,ISOS}
 
 <!-- CHAPTER START -->
 
-# ARITHMETIC OPERATORS
+# 算术运算符
 
-## Assignment
+## 赋值运算符
 
-| Operators | What does it do? |
+| 操作符 | 做了什么？ |
 | --------- | ---------------- |
-| `=`       | Initialize or change the value of a variable.
+| `=`       | 初始化或者改变变量值。
 
-## Arithmetic
+## 算术运算符
 
-| Operators | What does it do? |
+| 操作符 | 做了什么？ |
 | --------- | ---------------- |
-| `+` | Addition
-| `-` | Subtraction
-| `*` | Multiplication
-| `/` | Division
-| `**` | Exponentiation
-| `%` | Modulo
-| `+=` | Plus-Equal (*Increment a variable.*)
-| `-=` | Minus-Equal (*Decrement a variable.*)
-| `*=` | Times-Equal (*Multiply a variable.*)
-| `/=` | Slash-Equal (*Divide a variable.*)
-| `%=` | Mod-Equal (*Remainder of dividing a variable.*)
+| `+` | 加
+| `-` | 减
+| `*` | 乘
+| `/` | 除
+| `**` | 乘方
+| `%` | 模运算
+| `+=` | 加等于 (*增加变量值。*)
+| `-=` | 减等于 (*减少变量值。*)
+| `*=` | 乘等于 (*乘以变量值。*)
+| `/=` | 除等于 (*除以变量值。*)
+| `%=` | 模等于 (*变量取模*)
 
-## Bitwise
+## 按位运算
 
-| Operators | What does it do? |
+| 操作符 |做了什么？ |
 | --------- | ---------------- |
-| `<<` | Bitwise Left Shift
-| `<<=` | Left-Shift-Equal
-| `>>` | Bitwise Right Shift
-| `>>=` | Right-Shift-Equal
-| `&` | Bitwise AND
-| `&=` | Bitwise AND-Equal
-| `\|` | Bitwise OR
-| `\|=` | Bitwise OR-Equal
-| `~` | Bitwise NOT
-| `^` | Bitwise XOR
-| `^=` | Bitwise XOR-Equal
+| `<<` | 按位左移
+| `<<=` | 按位左移等于
+| `>>` | 按位右移
+| `>>=` | 按位右移等于
+| `&` | 按位与
+| `&=` | 按位与等于
+| `\|` | 按位或
+| `\|=` | 按位或等于
+| `~` | 按位非
+| `^` | 按位异或
+| `^=` | 按位异或等于
 
-## Logical
+## 逻辑运算
 
-| Operators | What does it do? |
+| 操作符 | 做了什么？ |
 | --------- | ---------------- |
-| `!` | NOT
-| `&&` | AND
-| `\|\|` | OR
+| `!` | 非
+| `&&` | 与
+| `\|\|` | 或
 
-## Miscellaneous
+## 其他
 
-| Operators | What does it do? | Example |
+| 操作符 | 做了什么？ | 示例 |
 | --------- | ---------------- | ------- |
-| `,` | Comma Separator | `((a=1,b=2,c=3))`
+| `,` | 逗号分隔符 | `((a=1,b=2,c=3))`
 
 
 <!-- CHAPTER END -->
