@@ -93,9 +93,9 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
     * [展开](#展开)
     * [大小写转换](#大小写转换)
     * [默认值](#默认值)
-* [BRACE EXPANSION](#brace-expansion)
-    * [Ranges](#ranges)
-    * [String Lists](#string-lists)
+* [花括号展开](#花括号展开)
+    * [范围区间](#范围区间)
+    * [字符串列表](#字符串列表)
 * [CONDITIONAL EXPRESSIONS](#conditional-expressions)
     * [File Conditionals](#file-conditionals)
     * [File Comparisons](#file-comparisons)
@@ -1237,9 +1237,9 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# BRACE EXPANSION
+# 花括号展开
 
-## Ranges
+## 范围区间
 
 ```shell
 # Syntax: {<START>..<END>}
@@ -1267,7 +1267,7 @@ echo {01..100}
 echo {1..10..2} # Increment by 2.
 ```
 
-## String Lists
+## 字符串列表
 
 ```shell
 echo {apples,oranges,pears,grapes}
