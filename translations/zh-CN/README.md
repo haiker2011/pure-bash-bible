@@ -81,11 +81,11 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 * [变量](#变量)
     * [使用一个变量声明和访问一个变量](#使用一个变量声明和访问一个变量)
     * [基于另一个变量命名变量](#基于另一个变量命名变量)
-* [ESCAPE SEQUENCES](#escape-sequences)
-    * [Text Colors](#text-colors)
-    * [Text Attributes](#text-attributes)
-    * [Cursor Movement](#cursor-movement)
-    * [Erasing Text](#erasing-text)
+* [转义序列](#转义序列)
+    * [文本颜色](#文本颜色)
+    * [文本属性](#文本属性)
+    * [游标移动](#游标移动)
+    * [擦除文本](#擦除文本)
 * [PARAMETER EXPANSION](#parameter-expansion)
     * [Indirection](#indirection)
     * [Replacement](#replacement)
@@ -1108,13 +1108,15 @@ value
 <!-- CHAPTER END -->
 
 <!-- CHAPTER START -->
-# ESCAPE SEQUENCES
+# 转义序列
 
 Contrary to popular belief, there is no issue in utilizing raw escape sequences. Using `tput` abstracts the same ANSI sequences as if printed manually. Worse still, `tput` is not actually portable. There are a number of `tput` variants each with different commands and syntaxes (*try `tput setaf 3` on a FreeBSD system*). Raw sequences are fine.
 
-## Text Colors
+与流行的观点相反，使用原始转义序列没有问题。使用 `tput` 提取与手动打印相同的ANSI序列。更糟糕的是，`tput` 实际上不可移植。有许多 `tput` 变体，每个变体都有不同的命令和语法（*尝试 `tput setaf 3` 在 freebsd 系统上*）。原始序列很好。
 
-**NOTE:** Sequences requiring RGB values only work in True-Color Terminal Emulators.
+## 文本颜色
+
+**警告：** 需要RGB值的序列只能在真彩色终端模拟器中工作。
 
 | Sequence | What does it do? | Value |
 | -------- | ---------------- | ----- |
@@ -1123,7 +1125,7 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 | `\e[38;2;<R>;<G>;<B>m` | Set text foreground color to RGB color. | `R`, `G`, `B`
 | `\e[48;2;<R>;<G>;<B>m` | Set text background color to RGB color. | `R`, `G`, `B`
 
-## Text Attributes
+## 文本属性
 
 | Sequence | What does it do? |
 | -------- | ---------------- |
@@ -1136,7 +1138,7 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 | `\e[7m` | Swap foreground and background colors. |
 
 
-## Cursor Movement
+## 游标移动
 
 | Sequence | What does it do? | Value |
 | -------- | ---------------- | ----- |
@@ -1150,7 +1152,7 @@ Contrary to popular belief, there is no issue in utilizing raw escape sequences.
 | `\e[u` | Restore cursor position. |
 
 
-## Erasing Text
+## 擦除文本
 
 | Sequence | What does it do? |
 | -------- | ---------------- |
