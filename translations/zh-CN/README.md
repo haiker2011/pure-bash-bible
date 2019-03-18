@@ -96,11 +96,11 @@ src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 * [花括号展开](#花括号展开)
     * [范围区间](#范围区间)
     * [字符串列表](#字符串列表)
-* [CONDITIONAL EXPRESSIONS](#conditional-expressions)
-    * [File Conditionals](#file-conditionals)
-    * [File Comparisons](#file-comparisons)
-    * [Variable Conditionals](#variable-conditionals)
-    * [Variable Comparisons](#variable-comparisons)
+* [条件表达式](#条件表达式)
+    * [文件条件](#文件条件)
+    * [文件比较](#文件比较)
+    * [变量条件](#变量条件)
+    * [变量比较](#变量比较)
 * [ARITHMETIC OPERATORS](#arithmetic-operators)
     * [Assignment](#assignment)
     * [Arithmetic](#arithmetic)
@@ -1282,11 +1282,11 @@ rm -rf ~/Downloads/{Movies,Music,ISOS}
 
 <!-- CHAPTER START -->
 
-# CONDITIONAL EXPRESSIONS
+# 条件表达式
 
-## File Conditionals
+## 文件条件
 
-| Expression | Value  | What does it do? |
+| 表达式 | 值  | 做了什么？ |
 | ---------- | ------ | ---------------- |
 | `-a`       | `file` | If file exists.
 | `-b`       | `file` | If file exists and is a block special file.
@@ -1310,17 +1310,17 @@ rm -rf ~/Downloads/{Movies,Music,ISOS}
 | `-O`       | `file` | If file exists and is owned by the effective user ID.
 | `-S`       | `file` | If file exists and is a socket.
 
-## File Comparisons
+## 文件比较
 
-| Expression | What does it do? |
+| 表达式 | 做了什么？ |
 | ---------- | ---------------- |
 | `file -ef file2` | If both files refer to the same inode and device numbers.
 | `file -nt file2` | If `file` is newer than `file2` (*uses modification time*) or `file` exists and `file2` does not.
 | `file -ot file2` | If `file` is older than `file2` (*uses modification time*) or `file2` exists and `file` does not.
 
-## Variable Conditionals
+## 变量条件
 
-| Expression | Value | What does it do? |
+| 表达式 | 值 | 做了什么？ |
 | ---------- | ----- | ---------------- |
 | `-o`       | `opt` | If shell option is enabled.
 | `-v`       | `var` | If variable has a value assigned.
@@ -1328,9 +1328,9 @@ rm -rf ~/Downloads/{Movies,Music,ISOS}
 | `-z`       | `var` | If the length of string is zero.
 | `-n`       | `var` | If the length of string is non-zero.
 
-## Variable Comparisons
+## 变量比较
 
-| Expression | What does it do? |
+| 表达式 | 做了什么？ |
 | ---------- | ---------------- |
 | `var = var2` | Equal to.
 | `var == var2` | Equal to (*synonym for `=`*).
